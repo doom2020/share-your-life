@@ -9,6 +9,9 @@ Platform is introduce：It's an open social platform
   5.观看实时视频
   6.内置小游戏
   后续待定。。
+  
+新功能拓展：
+  1.抓取代理(获取可靠代理,定时任务更新)
 
 表：
 分析
@@ -57,6 +60,15 @@ Platform is introduce：It's an open social platform
   表名：Permission
   字段：id, name, type, comment, create_time, update_time, is_delete
   外键：sysmenu
+  
+  
+代理表：
+  表名：Proxy
+  字段：id, ip, port	secret	request_type	area	response_speed	last_check_time, IP	PORT	匿名度	类型	位置	响应速度	最后验证时间
+
+
+
+
   
 
   
