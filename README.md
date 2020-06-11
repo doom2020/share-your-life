@@ -2,16 +2,17 @@
 Platform is introduce：It's an open social platform
 
 功能介绍：
-  1.登录可账号密码登录，可人脸识别登录
+  1.登录可账号密码登录，可人脸识别登录  face_recogzion
   2.发表文章以及评论
   3.拥有个人空间主页
-  4.实现在线聊天
+  4.实现在线聊天 socker select poll epoll
   5.观看实时视频
-  6.内置小游戏
+  6.内置小游戏 pygame
   后续待定。。
   
 新功能拓展：
-  1.抓取代理(获取可靠代理,定时任务更新)
+  1.抓取代理(获取可靠代理,定时任务更新) urllib requests scrapy pyspider xpaht beautifulsoup re phantomjs chromedriver
+  2.特定网站抓取(数字字母验证码,图形验证码等) PIL opencv numpy matplotlib sktlearn cnn
 
 表：
 分析
