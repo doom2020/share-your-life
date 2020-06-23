@@ -126,5 +126,29 @@ class Permission(models.Model):
         return self.name
 
     class Meta:
-        db_table = 'premission'
+        db_table = 'permission'
+
+
+class Proxy(models.Model):
+    ip = models.CharField(verbose_name='ip地址', max_length=50)
+    port = models.CharField(verbose_name='端口', max_length=10)
+    anonymous = models.CharField(verbose_name='匿名度', max_length=10)
+    type = models.CharField(verbose_name='类型', max_length=10)
+    location = models.CharField(verbose_name='位置', max_length=30)
+    response_speed = models.CharField(verbose_name='响应速度', max_length=20)
+    last_validation_time = models.DateTimeField(verbose_name='最后验证时间')
+    score = models.IntegerField(verbose_name='分数', default=100)
+    is_delete = models.BooleanField(verbose_name='是否删除', default=0)
+
+    def __str__(self):
+        return self.ip
+
+    class Meta:
+        db_table = 'proxy'
+
+
+
+
+
+
 
