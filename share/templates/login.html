@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>login</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        #title{
+            margin-top: 60px;
+            text-align: center;
+        }
+        #content{
+            background-color: white;
+            width: 400px;
+            height: 300px;
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            margin: auto;
+        }
+        #btnLogin{
+            width: 100%;
+            position: absolute;
+            left: 0;
+            right: 0;
+            margin: auto;
+        }
+        #errInfo{
+            width: 100%;
+            text-align: center;
+            position: absolute;
+            left: 0;
+            right: 0;
+            margin-top: 60px;
+        }
+    </style>
+</head>
+<script type="text/css"></script>
+<body style="background-color: ghostwhite">
+    <h1 id="title">Share You Life</h1>
+    <div id="content">
+        <form>
+            <div class="form-group has-feedback" style="margin-top: 15px">
+                <label for="exampleInputEmail1">Account</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Account">
+                <span class="glyphicon glyphicon-user form-control-feedback"></span>
+            </div>
+            <div class="form-group has-feedback" style="margin-bottom: 50px">
+                <label for="exampleInputPassword1">Password</label>
+                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+            </div>
+            <button id="btnLogin" type="submit" class="btn btn-default">Login</button>
+            <h2 id="errInfo">hello</h2>
+        </form>
+    </div>
+</body>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"></script>
+</html>

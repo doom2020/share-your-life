@@ -5,7 +5,7 @@ os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'share.settings')
 django.setup()
 
 
-from apscheduler.schedulers.background import BlockingScheduler
+from apscheduler.schedulers.background import BackgroundScheduler
 from datetime import datetime
 import time
 
@@ -16,7 +16,7 @@ def test_task():
 
 
 # if __name__ == "__main__":
-scheduler = BlockingScheduler()
+scheduler = BackgroundScheduler()
 # while True:
 scheduler.add_job(test_task, 'interval', seconds=2)
 scheduler.start()
