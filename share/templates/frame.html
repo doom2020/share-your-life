@@ -1,10 +1,114 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>frame</title>
-</head>
-<body>
+{% extends 'base.html' %}
+{% block title %}frame{% endblock %}
+{% block main %}
+    <div id="leftSidebar" style="float: left;width: 200px;height: 100%;background-color: #666666">
+        <ul style="margin: 5px 10px">
+            <li style="font-size: 20px;margin-bottom: 15px;">
+                <a href="#" style="display: block;text-decoration: none;color: white">
+                    <span class="glyphicon glyphicon-book" style="float: left"></span>
+                    <span style="margin-left: 10px">菜单一</span>
+                    <span class="glyphicon glyphicon-menu-right" style="float: right"></span>
+                </a>
+                <ul>
+                    <li style="font-size: 18px;margin-bottom: 10px;">
+                        <a href="#" style="text-decoration: none;color: white;">
+                            <span class="glyphicon glyphicon-globe" style="float: left;margin-left: 20px"></span>
+                            <span style="margin-left: 15px">功能一</span>
+                        </a>
+                    </li>
+                    <li style="font-size: 18px;margin-bottom: 10px;">
+                        <a href="#" style="text-decoration: none;color: white;">
+                            <span class="glyphicon glyphicon-retweet" style="float: left;margin-left: 20px"></span>
+                            <span style="margin-left: 15px">功能二</span>
+                        </a>
+                    </li>
+                    <li style="font-size: 18px;margin-bottom: 10px;">
+                        <a href="#" style="text-decoration: none;color: white;">
+                            <span class="glyphicon glyphicon-shopping-cart" style="float: left;margin-left: 20px"></span>
+                            <span style="margin-left: 15px">功能三</span>
+                        </a>
+                    </li>
 
-</body>
-</html>
+                </ul>
+            </li>
+            <li style="font-size: 20px;margin-bottom: 15px;">
+                <a href="#" style="display: block;text-decoration: none;color: white">
+                    <span class="glyphicon glyphicon-refresh" style="float: left"></span>
+                    <span style="margin-left: 10px">菜单二</span>
+                    <span class="glyphicon glyphicon-menu-right" style="float: right"></span>
+                </a>
+                <ul>
+                    <li style="font-size: 18px;margin-bottom: 10px;">
+                        <a href="#" style="text-decoration: none;color: white;">
+                            <span class="glyphicon glyphicon-comment" style="float: left;margin-left: 20px"></span>
+                            <span style="margin-left: 15px">功能四</span>
+                        </a>
+                    </li>
+                    <li style="font-size: 18px;margin-bottom: 10px;">
+                        <a href="#" style="text-decoration: none;color: white;">
+                            <span class="glyphicon glyphicon-piggy-bank" style="float: left;margin-left: 20px"></span>
+                            <span style="margin-left: 15px">功能五</span>
+                        </a>
+                    </li>
+                    <li style="font-size: 18px;margin-bottom: 10px;">
+                        <a href="#" style="text-decoration: none;color: white;">
+                            <span class="glyphicon glyphicon-link" style="float: left;margin-left: 20px"></span>
+                            <span style="margin-left: 15px">功能六</span>
+                        </a>
+                    </li>
+
+                </ul>
+            </li>
+            <li style="font-size: 20px;margin-bottom: 15px;">
+                <a href="#" style="display: block;text-decoration: none;color: white">
+                    <span class="glyphicon glyphicon-cloud" style="float: left"></span>
+                    <span style="margin-left: 10px">菜单三</span>
+                    <span class="glyphicon glyphicon-menu-right" style="float: right"></span>
+                </a>
+                <ul>
+                    <li style="font-size: 18px;margin-bottom: 10px;">
+                        <a href="#" style="text-decoration: none;color: white;">
+                            <span class="glyphicon glyphicon-random" style="float: left;margin-left: 20px"></span>
+                            <span style="margin-left: 15px">功能七</span>
+                        </a>
+                    </li>
+                    <li style="font-size: 18px;margin-bottom: 10px;">
+                        <a href="#" style="text-decoration: none;color: white;">
+                            <span class="glyphicon glyphicon-share-alt" style="float: left;margin-left: 20px"></span>
+                            <span style="margin-left: 15px">功能八</span>
+                        </a>
+                    </li>
+                    <li style="font-size: 18px;margin-bottom: 10px;">
+                        <a href="#" style="text-decoration: none;color: white;">
+                            <span class="glyphicon glyphicon-facetime-video" style="float: left;margin-left: 20px"></span>
+                            <span style="margin-left: 15px">功能九</span>
+                        </a>
+                    </li>
+
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <div id="rightContent" style="height: 100%;width: 100%;margin-left: 200px">
+        <div style="padding-top: 5px;margin-left: 5px" id="tabChange">
+            <ul class="nav nav-tabs" style="font-size: 18px">
+                <li role="presentation" class="active" style="border-color: #00cc00"><a href="#">Home</a></li>
+                <li role="presentation"><a href="#">Profile</a></li>
+                <li role="presentation"><a href="#">Messages</a></li>
+                <li role="presentation"><a href="#">Notes</a></li>
+                <li role="presentation"><a href="#">Proxy</a></li>
+            </ul>
+        </div>
+        <div id="basicSearch">
+            <form class="form-horizontal">
+                <div class="form-group">
+                    <label for="inputPassword" class="col-sm-2 control-label">Password</label>
+                    <div class="col-sm-10">
+                        <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+                    </div>
+                </div>
+            </form>
+
+        </div>
+    </div>
+{% endblock%}
