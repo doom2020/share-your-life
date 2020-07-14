@@ -1,0 +1,100 @@
+{% extends 'frame.html'%}
+{% block right_content%}
+    <div style="margin-left: 5px;height: 100px;">
+        <div style="padding-top: 5px;" id="tabChange">
+                <ul class="nav nav-tabs" style="font-size: 18px">
+                    <li role="presentation" class="active" style="border-color: #00cc00"><a href="#">快代理</a></li>
+<!--                    <li role="presentation"><a href="#">西刺代理</a></li>-->
+<!--                    <li role="presentation"><a href="#">Messages</a></li>-->
+<!--                    <li role="presentation"><a href="#">Notes</a></li>-->
+<!--                    <li role="presentation"><a href="#">Proxy</a></li>-->
+                </ul>
+        </div>
+        <div id="basicSearchDiv" style="font-size: 15px">
+            <form class="form-horizontal">
+                <div class="form-group col-sm-5">
+                    <label for="keyWords" class="control-label col-sm-1 sr-only"></label>
+                    <div class="has-feedback">
+                        <input type="text" class="form-control" id="keyWords" placeholder="请输入关键词。。">
+                        <a href="#" id="basicSearch"><span class="glyphicon glyphicon-search form-control-feedback" style="margin-top: 6px;"></span></a>
+                    </div>
+                </div>
+                <div class="form-group col-sm-7" style="margin-top: 15px">
+                    <a href="#" id="toggleForm" style="float: right">高级搜索</a>
+                    <a href="#" id="refreshPage"><span class="glyphicon glyphicon-refresh" style="float: right;margin-right: 20px"></span></a>
+                    <a href="#" id="downloadTable"><span class="glyphicon glyphicon-download-alt" style="float: right;margin-right: 20px"></span></a>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div id="powerSearchDiv" style="background-color: #D3FF93;height: 165px;margin-left: 5px;display: none">
+        <div class="row">
+            <div class="col-sm-12" style="margin-top: 10px">
+                <div class="row">
+                    <label class="col-xs-1" style="text-align: center;line-height: 34px">hello</label>
+                    <div class="col-xs-2">
+                        <input type="text" class="form-control">
+                    </div>
+                    <label class="col-xs-1" style="text-align: center;line-height: 34px">hello</label>
+                    <div class="col-xs-2">
+                        <input type="text" class="form-control">
+                    </div>
+                    <label class="col-xs-1" style="text-align: center;line-height: 34px">hello</label>
+                    <div class="col-xs-2">
+                        <input type="text" class="form-control">
+                    </div>
+                    <label class="col-xs-1" style="text-align: center;line-height: 34px">hello</label>
+                    <div class="col-xs-2">
+                        <input type="text" class="form-control">
+                    </div>
+                </div>
+                <div class="row">
+                    <label class="col-xs-1" style="text-align: center;line-height: 34px">hello</label>
+                    <div class="col-xs-2">
+                        <input type="text" class="form-control">
+                    </div>
+                    <label class="col-xs-1" style="text-align: center;line-height: 34px">hello</label>
+                    <div class="col-xs-2">
+                        <input type="text" class="form-control">
+                    </div>
+                    <label class="col-xs-1" style="text-align: center;line-height: 34px">hello</label>
+                    <div class="col-xs-2">
+                        <input type="text" class="form-control">
+                    </div>
+                    <label class="col-xs-1" style="text-align: center;line-height: 34px">hello</label>
+                    <div class="col-xs-2">
+                        <input type="text" class="form-control">
+                    </div>
+                </div>
+                <div class="row" style="margin-top: 30px">
+                    <div class="col-xs-2 col-xs-offset-5">
+                        <button class="btn btn-success" id="powerSearch" type="button" style="width: 100px">提交</button>
+                    </div>
+                    <div class="col-xs-2">
+                        <button class="btn btn-warning" id="clearForm" type="button" style="width: 100px">清除</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div style="margin-left: 5px;margin-top: 10px" id="tableDataInfo">
+        <table id="tableId" class="display" style="width:100%">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Ip</th>
+                    <th>Port</th>
+                    <th>匿名度</th>
+                    <th>类型</th>
+                    <th>位置</th>
+                    <th>响应速度</th>
+                    <th>最新验证时间</th>
+                    <th>分数</th>
+                </tr>
+            </thead>
+        </table>
+    </div>
+{% endblock%}
+{% block js_file %}
+    <script src="../static/js/pagejs/proxy/proxy.js"></script>
+{% endblock%}

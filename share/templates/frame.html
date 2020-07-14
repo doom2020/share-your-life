@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% block title %}frame{% endblock %}
 {% block main %}
-    <div id="leftSidebar" style="float: left;width: 200px;height: 100%;background-color: #666666">
+    <div id="leftSidebar" style="position: fixed;width: 200px;height: 100%;background-color: #666666;margin-bottom: 50px">
         <ul style="margin: 5px 10px">
             <li style="font-size: 20px;margin-bottom: 15px;">
                 <a href="#" style="display: block;text-decoration: none;color: white">
@@ -9,8 +9,8 @@
                     <span style="margin-left: 10px">菜单一</span>
                     <span class="glyphicon glyphicon-menu-right" style="float: right"></span>
                 </a>
-                <ul>
-                    <li style="font-size: 18px;margin-bottom: 10px;">
+                <ul class="menuShow">
+                    <li style="font-size: 18px;margin-bottom: 10px;background-color: black">
                         <a href="#" style="text-decoration: none;color: white;">
                             <span class="glyphicon glyphicon-globe" style="float: left;margin-left: 20px"></span>
                             <span style="margin-left: 15px">功能一</span>
@@ -31,13 +31,14 @@
 
                 </ul>
             </li>
+
             <li style="font-size: 20px;margin-bottom: 15px;">
                 <a href="#" style="display: block;text-decoration: none;color: white">
                     <span class="glyphicon glyphicon-refresh" style="float: left"></span>
                     <span style="margin-left: 10px">菜单二</span>
                     <span class="glyphicon glyphicon-menu-right" style="float: right"></span>
                 </a>
-                <ul>
+                <ul class="menuShow" style="display: none">
                     <li style="font-size: 18px;margin-bottom: 10px;">
                         <a href="#" style="text-decoration: none;color: white;">
                             <span class="glyphicon glyphicon-comment" style="float: left;margin-left: 20px"></span>
@@ -59,56 +60,69 @@
 
                 </ul>
             </li>
+
             <li style="font-size: 20px;margin-bottom: 15px;">
                 <a href="#" style="display: block;text-decoration: none;color: white">
                     <span class="glyphicon glyphicon-cloud" style="float: left"></span>
-                    <span style="margin-left: 10px">菜单三</span>
+                    <span style="margin-left: 10px">代理信息</span>
                     <span class="glyphicon glyphicon-menu-right" style="float: right"></span>
                 </a>
-                <ul>
+                <ul class="menuShow" style="display: none">
                     <li style="font-size: 18px;margin-bottom: 10px;">
                         <a href="#" style="text-decoration: none;color: white;">
                             <span class="glyphicon glyphicon-random" style="float: left;margin-left: 20px"></span>
-                            <span style="margin-left: 15px">功能七</span>
+                            <span style="margin-left: 15px">代理管理</span>
                         </a>
                     </li>
                     <li style="font-size: 18px;margin-bottom: 10px;">
                         <a href="#" style="text-decoration: none;color: white;">
                             <span class="glyphicon glyphicon-share-alt" style="float: left;margin-left: 20px"></span>
-                            <span style="margin-left: 15px">功能八</span>
+                            <span style="margin-left: 15px">代理分析</span>
                         </a>
                     </li>
                     <li style="font-size: 18px;margin-bottom: 10px;">
                         <a href="#" style="text-decoration: none;color: white;">
                             <span class="glyphicon glyphicon-facetime-video" style="float: left;margin-left: 20px"></span>
-                            <span style="margin-left: 15px">功能九</span>
+                            <span style="margin-left: 15px">代理设置</span>
                         </a>
                     </li>
 
                 </ul>
             </li>
+
+            <li style="font-size: 20px;margin-bottom: 15px;">
+                <a href="#" style="display: block;text-decoration: none;color: white">
+                    <span class="glyphicon glyphicon-cog" style="float: left"></span>
+                    <span style="margin-left: 10px">系统信息</span>
+                    <span class="glyphicon glyphicon-menu-right" style="float: right"></span>
+                </a>
+                <ul class="menuShow" style="display: none">
+                    <li style="font-size: 18px;margin-bottom: 10px;">
+                        <a href="#" style="text-decoration: none;color: white;">
+                            <span class="glyphicon glyphicon-magnet" style="float: left;margin-left: 20px"></span>
+                            <span style="margin-left: 15px">菜单设置</span>
+                        </a>
+                    </li>
+                    <li style="font-size: 18px;margin-bottom: 10px;">
+                        <a href="#" style="text-decoration: none;color: white;">
+                            <span class="glyphicon glyphicon-wrench" style="float: left;margin-left: 20px"></span>
+                            <span style="margin-left: 15px">用户组设置</span>
+                        </a>
+                    </li>
+                    <li style="font-size: 18px;margin-bottom: 10px;">
+                        <a href="#" style="text-decoration: none;color: white;">
+                            <span class="glyphicon glyphicon-transfer" style="float: left;margin-left: 20px"></span>
+                            <span style="margin-left: 15px">权限设置</span>
+                        </a>
+                    </li>
+
+                </ul>
+            </li>
+
         </ul>
     </div>
-    <div id="rightContent" style="height: 100%;width: 100%;margin-left: 200px">
-        <div style="padding-top: 5px;margin-left: 5px" id="tabChange">
-            <ul class="nav nav-tabs" style="font-size: 18px">
-                <li role="presentation" class="active" style="border-color: #00cc00"><a href="#">Home</a></li>
-                <li role="presentation"><a href="#">Profile</a></li>
-                <li role="presentation"><a href="#">Messages</a></li>
-                <li role="presentation"><a href="#">Notes</a></li>
-                <li role="presentation"><a href="#">Proxy</a></li>
-            </ul>
-        </div>
-        <div id="basicSearch">
-            <form class="form-horizontal">
-                <div class="form-group">
-                    <label for="inputPassword" class="col-sm-2 control-label">Password</label>
-                    <div class="col-sm-10">
-                        <input type="password" class="form-control" id="inputPassword" placeholder="Password">
-                    </div>
-                </div>
-            </form>
-
-        </div>
+    <div id="rightContent" style="height: 100%;width: calc(100% - 200px);margin-left: 200px;margin-bottom: 50px;position: fixed">
+        {% block right_content%}
+        {% endblock %}
     </div>
 {% endblock%}

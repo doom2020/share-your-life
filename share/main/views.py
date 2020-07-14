@@ -17,7 +17,7 @@ class Login(View):
 
     def get(self, request, *args, **kwargs):
         # return HttpResponse('this is login page for get')
-        return render(request, 'frame.html', locals())
+        return render(request, 'proxy/proxy.html', locals())
 
     def post(self, request, *args, **kwargs):
         return HttpResponse('this is login page for post')
