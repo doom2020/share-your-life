@@ -1,100 +1,109 @@
 {% extends 'frame.html'%}
 {% block right_content%}
-    <div style="margin-left: 5px;height: 100px;">
-        <div style="padding-top: 5px;" id="tabChange">
-                <ul class="nav nav-tabs" style="font-size: 18px">
-                    <li role="presentation" class="active" style="border-color: #00cc00"><a href="#">快代理</a></li>
-<!--                    <li role="presentation"><a href="#">西刺代理</a></li>-->
-<!--                    <li role="presentation"><a href="#">Messages</a></li>-->
-<!--                    <li role="presentation"><a href="#">Notes</a></li>-->
-<!--                    <li role="presentation"><a href="#">Proxy</a></li>-->
-                </ul>
-        </div>
-        <div id="basicSearchDiv" style="font-size: 15px">
-            <form class="form-horizontal">
-                <div class="form-group col-sm-5">
-                    <label for="keyWords" class="control-label col-sm-1 sr-only"></label>
-                    <div class="has-feedback">
-                        <input type="text" class="form-control" id="keyWords" placeholder="请输入关键词。。">
-                        <a href="#" id="basicSearch"><span class="glyphicon glyphicon-search form-control-feedback" style="margin-top: 6px;"></span></a>
-                    </div>
-                </div>
-                <div class="form-group col-sm-7" style="margin-top: 15px">
-                    <a href="#" id="toggleForm" style="float: right">高级搜索</a>
-                    <a href="#" id="refreshPage"><span class="glyphicon glyphicon-refresh" style="float: right;margin-right: 20px"></span></a>
-                    <a href="#" id="downloadTable"><span class="glyphicon glyphicon-download-alt" style="float: right;margin-right: 20px"></span></a>
-                </div>
-            </form>
-        </div>
+    <div id="tabChangeDiv" style="padding-top: 5px">
+            <ul class="nav nav-tabs" style="font-size: 18px">
+                <li role="presentation" class="active" style="border-color: #00cc00"><a href="#">Home</a></li>
+                <li role="presentation"><a href="#">Profile</a></li>
+                <li role="presentation"><a href="#">Messages</a></li>
+                <li role="presentation"><a href="#">Notes</a></li>
+                <li role="presentation"><a href="#">Proxy</a></li>
+            </ul>
     </div>
-    <div id="powerSearchDiv" style="background-color: #D3FF93;height: 165px;margin-left: 5px;display: none">
-        <div class="row">
-            <div class="col-sm-12" style="margin-top: 10px">
-                <div class="row">
-                    <label class="col-xs-1" style="text-align: center;line-height: 34px">hello</label>
-                    <div class="col-xs-2">
-                        <input type="text" class="form-control">
-                    </div>
-                    <label class="col-xs-1" style="text-align: center;line-height: 34px">hello</label>
-                    <div class="col-xs-2">
-                        <input type="text" class="form-control">
-                    </div>
-                    <label class="col-xs-1" style="text-align: center;line-height: 34px">hello</label>
-                    <div class="col-xs-2">
-                        <input type="text" class="form-control">
-                    </div>
-                    <label class="col-xs-1" style="text-align: center;line-height: 34px">hello</label>
-                    <div class="col-xs-2">
-                        <input type="text" class="form-control">
-                    </div>
+    <div style="font-size: 15px;margin-top: 5px">
+        <form class="form-inline">
+            <div class="form-group has-feedback">
+                <label class="sr-only" for="basicSearchValue">输入关键词</label>
+                <input type="text" style="width: 300px" class="form-control" id="basicSearchValue" placeholder="请输入关键词。。">
+                <a href="#" class="glyphicon glyphicon-search form-control-feedback" id="basicSearch"></a>
+            </div>
+            <button type="button" class="btn btn-info" style="float: right" id="powerSearchToggle">高级搜索</button>
+            <button type="button" class="btn btn-info" style="float: right;margin-right: 20px" id="refreshBtn"><span class="glyphicon glyphicon-refresh"></span></button>
+            <button type="button" class="btn btn-info" style="float: right;margin-right: 20px" id="downloadBtn"><span class="glyphicon glyphicon-download-alt"></span></button>
+        </form>
+    </div>
+    <div id="powerSearchDiv" style="background-color: #E0E0EA;height: 160px;margin-top: 5px;display: none">
+        <form class="form-horizontal">
+            <div class="form-group" style="padding-top: 15px;">
+                <label class="control-label col-sm-1" for="keywords">hello</label>
+                <div class="col-sm-2">
+                    <input type="text" class="form-control" id="keywords">
                 </div>
-                <div class="row">
-                    <label class="col-xs-1" style="text-align: center;line-height: 34px">hello</label>
-                    <div class="col-xs-2">
-                        <input type="text" class="form-control">
-                    </div>
-                    <label class="col-xs-1" style="text-align: center;line-height: 34px">hello</label>
-                    <div class="col-xs-2">
-                        <input type="text" class="form-control">
-                    </div>
-                    <label class="col-xs-1" style="text-align: center;line-height: 34px">hello</label>
-                    <div class="col-xs-2">
-                        <input type="text" class="form-control">
-                    </div>
-                    <label class="col-xs-1" style="text-align: center;line-height: 34px">hello</label>
-                    <div class="col-xs-2">
-                        <input type="text" class="form-control">
-                    </div>
+                <label class="control-label col-sm-1" for="keywords2">hello</label>
+                <div class="col-sm-2">
+                    <input type="text" class="form-control" id="keywords2">
                 </div>
-                <div class="row" style="margin-top: 30px">
-                    <div class="col-xs-2 col-xs-offset-5">
-                        <button class="btn btn-success" id="powerSearch" type="button" style="width: 100px">提交</button>
-                    </div>
-                    <div class="col-xs-2">
-                        <button class="btn btn-warning" id="clearForm" type="button" style="width: 100px">清除</button>
-                    </div>
+                <label class="control-label col-sm-1" for="keywords3">hello</label>
+                <div class="col-sm-2">
+                    <input type="text" class="form-control" id="keywords3">
+                </div>
+                <label class="control-label col-sm-1" for="keywords4">hello</label>
+                <div class="col-sm-2">
+                    <input type="text" class="form-control" id="keywords4">
                 </div>
             </div>
-        </div>
+            <div class="form-group">
+                <label class="control-label col-sm-1" for="keywords5">hello</label>
+                <div class="col-sm-2">
+                    <input type="text" class="form-control" id="keywords5">
+                </div>
+                <label class="control-label col-sm-1" for="keywords6">hello</label>
+                <div class="col-sm-2">
+                    <input type="text" class="form-control" id="keywords6">
+                </div>
+                <label class="control-label col-sm-1" for="keywords7">hello</label>
+                <div class="col-sm-2">
+                    <input type="text" class="form-control" id="keywords7">
+                </div>
+                <label class="control-label col-sm-1" for="keywords8">hello</label>
+                <div class="col-sm-2">
+                    <input type="text" class="form-control" id="keywords8">
+                </div>
+            </div>
+            <button type="button" class="btn btn-success col-sm-offset-5">提交</button>
+            <button type="button" class="btn btn-warning col-sm-offset-1">清空</button>
+        </form>
     </div>
-    <div style="margin-left: 5px;margin-top: 10px" id="tableDataInfo">
-        <table id="tableId" class="display" style="width:100%">
+    <div style="margin-top: 5px" id="tableDataInfo">
+        <table id="example" class="display table-bordered" style="width:100%">
             <thead>
                 <tr>
-                    <th>Id</th>
-                    <th>Ip</th>
-                    <th>Port</th>
-                    <th>匿名度</th>
-                    <th>类型</th>
-                    <th>位置</th>
-                    <th>响应速度</th>
-                    <th>最新验证时间</th>
-                    <th>分数</th>
+                    <th>Name</th>
+                    <th>Position</th>
+                    <th>Office</th>
+                    <th>Extn.</th>
+                    <th>Start date</th>
+                    <th>Salary</th>
                 </tr>
             </thead>
+            <tbody>
+                <tr>
+                    <td>xiaoxiao</td>
+                    <td>软件开发</td>
+                    <td>有科</td>
+                    <td>no1</td>
+                    <td>2020-07-15 20:20:20</td>
+                    <td>10000</td>
+                </tr>
+                <tr>
+                    <td>xiaoxiao</td>
+                    <td>软件开发</td>
+                    <td>有科</td>
+                    <td>no1</td>
+                    <td>2020-07-15 20:20:20</td>
+                    <td>10000</td>
+                </tr>
+                <tr>
+                    <td>xiaoxiao</td>
+                    <td>软件开发</td>
+                    <td>有科</td>
+                    <td>no1</td>
+                    <td>2020-07-15 20:20:20</td>
+                    <td>10000</td>
+                </tr>
+            </tbody>
         </table>
     </div>
 {% endblock%}
 {% block js_file %}
-    <script src="../static/js/pagejs/proxy/proxy.js"></script>
+    <script src="../static/js/pagejs/main/main.js"></script>
 {% endblock%}
