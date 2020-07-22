@@ -10,7 +10,7 @@ from .action import FreeProxyHandle
 
 class FreeProxy(View):
     def get(self, request, *args, **kwargs):
-        pass
+        return render(request, 'proxy/proxy.html', locals())
 
     def post(self, request, *args, **kwargs):
         free_proxy_handle = FreeProxyHandle(request)
