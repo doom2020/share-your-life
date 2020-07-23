@@ -40,6 +40,14 @@
             right: 0;
             margin-top: 60px;
         }
+        .errBorder{
+            border-color: #FF0000;
+            border-width: thick;
+        }
+        .errBackgroundColor{
+            background-color: #FF0000;
+        }
+
     </style>
 </head>
 <script type="text/css"></script>
@@ -47,6 +55,7 @@
     <h1 id="title">Share You Life</h1>
     <div id="content" style="border-radius: 6px">
         <form>
+            {% csrf_token %}
             <div class="form-group has-feedback" style="margin-top: 5px">
                 <label for="account" style="margin-left: 20px">Account</label>
                 <input type="text" style="margin-left: 20px;width: 360px;background-color: rgb(232, 240, 254)" class="form-control" id="account" placeholder="Account">
@@ -55,12 +64,12 @@
             <div class="form-group has-feedback" style="margin-bottom: 5px">
                 <label for="phone" style="margin-left: 20px">Phone</label>
                 <input type="text" style="margin-left: 20px;width: 360px;background-color: rgb(232, 240, 254)" class="form-control" id="phone" placeholder="Phone">
-                <span class="glyphicon glyphicon-lock form-control-feedback" style="margin-right: 20px"></span>
+                <span class="glyphicon glyphicon-earphone form-control-feedback" style="margin-right: 20px"></span>
             </div>
             <div class="form-group has-feedback" style="margin-bottom: 5px">
                 <label for="email" style="margin-left: 20px">Email</label>
                 <input type="email" style="margin-left: 20px;width: 360px;background-color: rgb(232, 240, 254)" class="form-control" id="email" placeholder="Email">
-                <span class="glyphicon glyphicon-lock form-control-feedback" style="margin-right: 20px"></span>
+                <span class="glyphicon glyphicon-envelope form-control-feedback" style="margin-right: 20px"></span>
             </div>
             <div class="form-group has-feedback" style="margin-bottom: 5px">
                 <label for="upwd" style="margin-left: 20px">Password</label>
@@ -77,16 +86,16 @@
                 <input type="file" id="picture" style="margin-left: 20px">
             </div>
             <div class="form-group">
-                <label style="margin-left: 20px">Sex</label>
+                <label style="margin-left: 20px">Gender</label>
                 <div style="margin-left: 20px">
                     <label class="radio-inline">
-                        <input type="radio" name="boy" id="boy" value="boy"> 男
+                        <input type="radio" name="gender" id="boy" value="boy"> 男
                     </label>
                     <label class="radio-inline">
-                        <input type="radio" name="girl" id="girl" value="girl"> 女
+                        <input type="radio" name="gender" id="girl" value="girl"> 女
                     </label>
                     <label class="radio-inline">
-                        <input type="radio" name="secret" id="secret" value="boy"> 隐藏
+                        <input type="radio" name="gender" id="secret" value="boy"> 隐藏
                     </label>
                 </div>
             </div>
@@ -97,4 +106,5 @@
 </body>
     <script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"></script>
+    <script src="{% static 'js/pagejs/main/register.js'%}"></script>
 </html>

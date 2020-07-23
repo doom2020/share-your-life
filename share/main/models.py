@@ -7,7 +7,7 @@ class UserInfo(models.Model):
     name = models.CharField(verbose_name='昵称', max_length=50)
     phone = models.CharField(verbose_name='手机号', max_length=10, blank=True, null=True)
     email = models.EmailField(verbose_name='邮箱', max_length=50, blank=True, null=True)
-    gender = models.SmallIntegerField(verbose_name='性别')
+    gender = models.CharField(verbose_name='性别', max_length=10, blank=True, null=True)
     face_info = models.CharField(verbose_name='人脸特征', max_length=10000, blank=True, null=True)
     picture = models.CharField(verbose_name='头像', max_length=100, blank=True, null=True)
     password = models.CharField(verbose_name='密码', max_length=100, blank=True, null=True)
