@@ -1,10 +1,14 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{% block title %}base{% endblock %}</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="//cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="../static/js/font-awesome/css/font-awesome.min.css">
     <style>
         * {
             margin: 0;
@@ -26,8 +30,8 @@
                         <li class="active"><a href="#">Home <span class="sr-only">(current)</span></a></li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a href="#">未登录</a></li>
-                        <li><a href="#">Logout</a></li>
+                        <li><a href="#">{{ user }}</a></li>
+                        <li><a href="#" id="logout">Logout</a></li>
                     </ul>
                 </div>
             </div>

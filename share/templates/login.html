@@ -47,6 +47,7 @@
     <h1 id="title">Share You Life</h1>
     <div id="content" style="border-radius: 6px">
         <form>
+            {% csrf_token %}
             <div class="form-group has-feedback" style="margin-top: 15px">
                 <label for="account" style="margin-left: 20px">Account</label>
                 <input type="text" style="margin-left: 20px;width: 360px;background-color: rgb(232, 240, 254)" class="form-control" id="account" placeholder="Account">
@@ -58,10 +59,11 @@
                 <span class="glyphicon glyphicon-lock form-control-feedback" style="margin-right: 20px"></span>
             </div>
             <button id="btnLogin" type="button" class="btn btn-success" style="width: 360px;background-color: #00cc00">Login</button>
-            <h4 id="errInfo">The Account or Password is error</h4>
+            <h4 id="errInfo"></h4>
         </form>
     </div>
 </body>
     <script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"></script>
+    <script src="{% static 'js/pagejs/main/login.js' %}"></script>
 </html>

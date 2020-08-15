@@ -29,8 +29,8 @@ class FreeProxyCool:
     def __init__(self, request):
         self.request = request
 
-    def func1(self):
-        pass
+    def get_table_data(self):
+        ret_dict = {'ret': 0, 'data': ''}
 
 
 class GetFreeProxy(object):

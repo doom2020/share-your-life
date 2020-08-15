@@ -1,6 +1,44 @@
 $(function () {
+    function csrfSafeMethod(method) {
+    // these HTTP methods do not require CSRF protection
+    return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method));
+    }
+    $.ajaxSetup({
+        beforeSend: function(xhr, settings) {
+            if (!csrfSafeMethod(settings.type) && !this.crossDomain) {
+                var csrftoken = $("[name=csrfmiddlewaretoken]").val();
+                xhr.setRequestHeader("X-CSRFToken", csrftoken);
+            }
+        }
+    });
     $("#btnRegister").unbind().bind('click', function () {
-        return true
+        var account = $("#account").val();
+        var phone = $("#phone").val();
+        var email = $("#email").val();
+        var upwd = $("#upwd").val();
+        var cpwd = $("#cpwd").val();
+        var gender = $("input:radio:checked").val();
+        if($("#picture").val() != ""){
+            var picture = $("#picture").prop('files')[0];
+        }else {
+            var picture = '';
+        }
+        console.log(account, phone, email, upwd, cpwd, gender, picture);
+        if(account && upwd && cpwd && gender){
+            $.ajax({
+                url: './',
+                data: {"post_type": 'register', "account": account, "phone": phone, "email": email, "upwd": upwd,
+                        "cpwd": cpwd, "gender": gender, "picture": picture},
+                type: 'post',
+                dataType: 'json',
+                async: 'true',
+                success: function (data, status, xhr) {
+                    var result = data.ret;
+                    var info = data.data;
+                    return true;
+                }
+            })
+        }
     });
 
     // 验证用户名

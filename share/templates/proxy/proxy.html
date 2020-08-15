@@ -1,20 +1,13 @@
 {% extends 'frame.html'%}
+{% load static %}
 {% block right_content%}
-    <div id="tabChangeDiv" style="padding-top: 5px">
-            <ul class="nav nav-tabs" style="font-size: 18px">
-                <li role="presentation" class="active" style="border-color: #00cc00"><a href="#">Home</a></li>
-                <li role="presentation"><a href="#">Profile</a></li>
-                <li role="presentation"><a href="#">Messages</a></li>
-                <li role="presentation"><a href="#">Notes</a></li>
-                <li role="presentation"><a href="#">Proxy</a></li>
-            </ul>
-    </div>
-    <div style="font-size: 15px;margin-top: 5px">
+    <div style="font-size: 15px;margin-top: 5px;padding-top: 5px">
         <form class="form-inline">
-            <div class="form-group has-feedback">
-                <label class="sr-only" for="basicSearchValue">输入关键词</label>
-                <input type="text" style="width: 300px" class="form-control" id="basicSearchValue" placeholder="请输入关键词。。">
-                <a href="#" class="glyphicon glyphicon-search form-control-feedback" id="basicSearch"></a>
+            <div class="input-group" style="width: 500px;">
+                <input type="text" style="width: 500px" class="form-control" id="basicSearchValue" placeholder="请输入关键词。。">
+                <span class="input-group-btn">
+                    <button type="button" name="btnBasicSearch" id="btnBasicSearch" class="btn btn-flat"><i class="fa fa-search"></i></button>
+                </span>
             </div>
             <button type="button" class="btn btn-info" style="float: right" id="powerSearchToggle">高级搜索</button>
             <button type="button" class="btn btn-info" style="float: right;margin-right: 20px" id="refreshBtn"><span class="glyphicon glyphicon-refresh"></span></button>
@@ -59,8 +52,8 @@
                     <input type="text" class="form-control" id="keywords8">
                 </div>
             </div>
-            <button type="button" class="btn btn-success col-sm-offset-5">提交</button>
-            <button type="button" class="btn btn-warning col-sm-offset-1">清空</button>
+            <button type="button" class="btn btn-success col-sm-offset-5" id="btnPowerSearch">提交</button>
+            <button type="button" class="btn btn-warning col-sm-offset-1" id="btnClearn">清空</button>
         </form>
     </div>
     <div style="margin-top: 5px" id="tableDataInfo">
@@ -75,35 +68,9 @@
                     <th>Salary</th>
                 </tr>
             </thead>
-            <tbody>
-                <tr>
-                    <td>xiaoxiao</td>
-                    <td>软件开发</td>
-                    <td>有科</td>
-                    <td>no1</td>
-                    <td>2020-07-15 20:20:20</td>
-                    <td>10000</td>
-                </tr>
-                <tr>
-                    <td>xiaoxiao</td>
-                    <td>软件开发</td>
-                    <td>有科</td>
-                    <td>no1</td>
-                    <td>2020-07-15 20:20:20</td>
-                    <td>10000</td>
-                </tr>
-                <tr>
-                    <td>xiaoxiao</td>
-                    <td>软件开发</td>
-                    <td>有科</td>
-                    <td>no1</td>
-                    <td>2020-07-15 20:20:20</td>
-                    <td>10000</td>
-                </tr>
-            </tbody>
         </table>
     </div>
 {% endblock%}
 {% block js_file %}
-    <script src="../static/js/pagejs/proxy/proxy.js"></script>
+    <script src="{% static 'js/pagejs/proxy/proxy.js' %}"></script>
 {% endblock%}
