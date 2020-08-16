@@ -1,5 +1,4 @@
 from django.http import HttpResponse
-
 from main.models import UserInfo
 
 
@@ -19,11 +18,6 @@ class HomeHandler(object):
 class HomeCool(object):
     def __init__(self, request):
         self.request = request
-
-    # def logout(self):
-    #     ret_dict = {'ret': 0, 'data': ''}
-    #     self.logout()
-    #     return ret_dict
 
 
 class LoginHandler(object):

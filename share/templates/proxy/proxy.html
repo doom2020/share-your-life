@@ -3,6 +3,7 @@
 {% block right_content%}
     <div style="font-size: 15px;margin-top: 5px;padding-top: 5px">
         <form class="form-inline">
+            {% csrf_token %}
             <div class="input-group" style="width: 500px;">
                 <input type="text" style="width: 500px" class="form-control" id="basicSearchValue" placeholder="请输入关键词。。">
                 <span class="input-group-btn">
@@ -16,6 +17,7 @@
     </div>
     <div id="powerSearchDiv" style="background-color: #E0E0EA;height: 160px;margin-top: 5px;display: none">
         <form class="form-horizontal">
+            {% csrf_token %}
             <div class="form-group" style="padding-top: 15px;">
                 <label class="control-label col-sm-1" for="keywords">hello</label>
                 <div class="col-sm-2">
@@ -57,15 +59,17 @@
         </form>
     </div>
     <div style="margin-top: 5px" id="tableDataInfo">
-        <table id="example" class="display table-bordered" style="width:100%">
+        <table id="tableId" class="display table-bordered table-striped" style="width:100%">
             <thead>
                 <tr>
-                    <th>Name</th>
-                    <th>Position</th>
-                    <th>Office</th>
-                    <th>Extn.</th>
-                    <th>Start date</th>
-                    <th>Salary</th>
+                    <th>IP地址</th>
+                    <th>端口</th>
+                    <th>匿名度</th>
+                    <th>类型</th>
+                    <th>地区</th>
+                    <th>响应速度</th>
+                    <th>最后验证时间</th>
+                    <th>分数</th>
                 </tr>
             </thead>
         </table>

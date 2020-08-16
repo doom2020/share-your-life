@@ -6,17 +6,17 @@ import time
 from lxml import etree
 from multiprocessing import Pool
 from datetime import datetime
-
 from main.models import Proxy
+from public.serialization import ProxySerializer
 from tools import Tools
 from variable import AGENT_LIST
 
 
-class FreeProxyHandle:
+class FreeProxyHandler:
     def __init__(self, request):
         self.request = request
 
-    def get_handle(self):
+    def get_handler(self):
         post_type = self.request.POST.get('post_type')
         free_proxy_cool = FreeProxyCool(self.request)
         handle = None
@@ -30,7 +30,29 @@ class FreeProxyCool:
         self.request = request
 
     def get_table_data(self):
-        ret_dict = {'ret': 0, 'data': ''}
+        ret_dict = {'ret': 0, 'data': []}
+        try:
+            flag = self.request.POST.get('flag')
+            filter_condition = self.request.POST.get('filter_condition')
+            start = int(self.request.POST.get('start', 0))
+            length = int(self.request.POST.get('length', 0))
+            if not length:
+                length = 10
+            end = start + length
+            proxy_objs = Proxy.objects.filter(is_delete=0).order_by('-score')
+            if filter_condition:
+                pass
+            total = len(proxy_objs)
+            configs = proxy_objs[start:end]
+            datas = ProxySerializer(configs, many=True).data
+            ret_dict['data'] = datas
+            ret_dict['draw'] = int(self.request.POST.get('draw', 1))
+            ret_dict['recordsTotal'] = total
+            ret_dict['recordsFiltered'] = total
+        except Exception as e:
+            print(e)
+        print(ret_dict)
+        return ret_dict
 
 
 class GetFreeProxy(object):
